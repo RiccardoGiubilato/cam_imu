@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>cam_imu_alti</name>
+  <name>cam_imu</name>
   <version>0.0.0</version>
-  <description>The cam_imu_alti package</description>
+  <description>The cam_imu package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
