@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(cam_imu_alti)
+project(cam_imu)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
@@ -103,7 +103,7 @@ find_package(Boost REQUIRED COMPONENTS system)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-#  LIBRARIES cam_imu_alti
+#  LIBRARIES cam_imu
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -134,7 +134,7 @@ add_library(${PROJECT_NAME}_lib
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(${PROJECT_NAME}_node
-  src/cam_imu_alti_node.cpp
+  src/cam_imu_node.cpp
   )
 
 ## Rename C++ executable without prefix
@@ -194,7 +194,7 @@ target_link_libraries(${PROJECT_NAME}_node
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_cam_imu_alti.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_cam_imu.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
