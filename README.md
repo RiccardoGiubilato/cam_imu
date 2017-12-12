@@ -5,6 +5,7 @@ This package provides handling for a Visual Inertial setup that comprises an iDS
 Depends on:
 * tinyIMU_relay
 * imu_filter_madgwick
+
 uEye SDK must also be installed.
 
 It serves as a complement to the article in https://riccardogiubilato.github.io/visual/odometry/2017/12/12/Visual-Inertial-Odometry-On-A-Budget.html
