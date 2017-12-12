@@ -1,0 +1,31 @@
+<launch>
+
+	<!-- ************************************ -->
+	<!-- Bringup for camera + IMU + altimeter -->
+	<!-- ************************************ -->
+
+	<!-- Bringup camera -->
+	<include file="$(find ueye_cam)/launch/rgb8_opt.launch" />
+	
+	<!-- Bringup IMU MPU6050 -->
+	<node name="serial_node" pkg="rosserial_python" type="serial_node.py" >
+		<param name="port" value="/dev/ttyACM0" />
+		<param name="baud" value="57600" />
+	</node>
+	
+	<node name="imu_raw2imu" pkg="tinyIMU_relay" type="tinyIMU_relay" >
+		<param name="scale" value="true" />
+	</node>
+	
+	<node name="imu_filter" pkg="imu_filter_madgwick" type="imu_filter_node" >
+		<param name="use_mag" value="false" />
+		<param name="stateless" value="false" />
+	</node>
+	
+	<!-- Bringup altimeter Sf10 -->
+	<include file="$(find altimeter_sf10)/launch/alti.launch" />
+	
+	<!-- Launch rviz 
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find cam_imu_alti)/conf/default.rviz" /-->
+
+</launch>

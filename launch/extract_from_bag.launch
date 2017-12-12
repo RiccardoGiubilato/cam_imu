@@ -1,0 +1,9 @@
+<launch>
+   <node pkg="rosbag" type="play" name="rosbag" args="/home/riccardo/catkin_ws/bags/floor_2017-11-28-13-55-07.bag"/>
+   <node name="extract" pkg="image_view" type="extract_images" respawn="false" output="screen" cwd="ROS_HOME">
+      <remap from="image" to="/camera/image_raw"/>
+      <param name="filename_format" value="/home/riccardo/catkin_ws/bags/extracted/floor/frame%06i.jpg"/>
+    	<param name="sec_per_frame" value="0.03"/>
+   </node>
+</launch>
+
