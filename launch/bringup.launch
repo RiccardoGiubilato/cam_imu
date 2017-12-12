@@ -22,9 +22,6 @@
 		<param name="stateless" value="false" />
 	</node>
 	
-	<!-- Bringup altimeter Sf10 -->
-	<include file="$(find altimeter_sf10)/launch/alti.launch" />
-	
 	<!-- Launch rviz 
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find cam_imu_alti)/conf/default.rviz" /-->
 
